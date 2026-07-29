@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynda McGuirk | English Tutor for Professionals</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-hover: #1e40af;
+            --accent: #0284c7;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.75rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header p.subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Experience Section */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2.section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .card-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.975rem;
+        }
+
+        /* Two-column layout for Education and Tools */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .list-item {
+            margin-bottom: 1rem;
+        }
+
+        .list-item strong {
+            display: block;
+            color: var(--text-dark);
+        }
+
+        .list-item span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Tech Badges */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background-color: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .footer-email {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-email:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO HEADER -->
+    <header>
+        <div class="header-content">
+            <h1>Lynda McGuirk</h1>
+            <p class="subtitle">Native English Speaker & Independent English Tutor for Professionals</p>
+            <div class="badges">
+                <span class="badge">📍 Rabat, Morocco (U.S. Native)</span>
+                <span class="badge">📜 CELTA Certified</span>
+                <span class="badge">🤖 AI Mastery Certified</span>
+            </div>
+            <a href="mailto:lyndamcguirk@gmail.com" class="cta-btn">Get in Touch</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ABOUT -->
+        <div class="about">
+            <h2>English Tutor for Professionals</h2>
+            <p>Lynda has helped professionals from over 20 countries improve their English. Trust Lynda to help you meet your goals with customized, high-impact instruction!</p>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h2 class="section-title">Teaching Experience</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Independent English Tutor for Adults</div>
+                        <div class="card-subtitle">Private Tutor</div>
+                    </div>
+                    <div class="card-date">May 2010 – Present</div>
+                </div>
+                <div class="card-body">
+                    <p>Provide private English as a Second Language (ESL) tutoring online or in-person. Design and deliver custom, goal-targeted lessons for business professionals. Assist with resume and cover letter preparation, Application Tracking Systems (ATS) optimization, cultural immersion activities, and small business organization services.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">American Language Centers, Morocco</div>
+                        <div class="card-subtitle">English Teacher (Rabat & Oujda)</div>
+                    </div>
+                    <div class="card-date">April 2021 – Present</div>
+                </div>
+                <div class="card-body">
+                    <p>Plan and deliver English lessons based on the ALC curriculum to adult and young English language learners. Design, evaluate, and grade assessments and final exams. Organize student engagement activities, including educational travel trips to the United States.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Global LT</div>
+                        <div class="card-subtitle">Virtual & Face-to-Face Trainer</div>
+                    </div>
+                    <div class="card-date">March 2019 – Present</div>
+                </div>
+                <div class="card-body">
+                    <p>Deliver specialized private English language and cross-cultural training to business professionals and their families globally, both online and in-person.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">American Baccalaureate School, Kuwait</div>
+                        <div class="card-subtitle">English Language Arts Teacher</div>
+                    </div>
+                    <div class="card-date">August 2020 – December 2020</div>
+                </div>
+                <div class="card-body">
+                    <p>Designed and presented ELA lessons via MS Teams to classes of 10–25 students. Served as Lead Teacher for Grade 10 English and Drama, managing assignments, assessments, and grade reporting via PowerSchool.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Computer Systems Institute, Boston, MA</div>
+                        <div class="card-subtitle">Adjunct Instructor</div>
+                    </div>
+                    <div class="card-date">February 2016 – September 2019</div>
+                </div>
+                <div class="card-body">
+                    <p>Served as a Hospitality Subject Matter Expert and ESL instructor for adult learners in classroom settings. Developed course curricula, led exams, and counseled international students.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & APPLICATIONS GRID -->
+        <div class="grid-2">
+            
+            <!-- EDUCATION & CERTIFICATIONS -->
+            <section>
+                <h2 class="section-title">Education & Credentials</h2>
+                
+                <div class="list-item">
+                    <strong>M.S. in Hospitality & Tourism Management</strong>
+                    <span>University of Massachusetts, Amherst (Isenberg School of Management), 2010</span>
+                </div>
+
+                <div class="list-item">
+                    <strong>B.A. in English Literature (Minor: Theatre Arts)</strong>
+                    <span>Suffolk University, Boston, MA, 1992</span>
+                </div>
+
+                <div class="list-item">
+                    <strong>Cambridge Assessment English</strong>
+                    <span>CELTA Certified</span>
+                </div>
+
+                <div class="list-item">
+                    <strong>Bridge Language, Education & Travel</strong>
+                    <span>TEFL Certified, 2016</span>
+                </div>
+
+                <div class="list-item">
+                    <strong>Coursiv</strong>
+                    <span>AI Mastery Certificate, 2026</span>
+                </div>
+            </section>
+
+            <!-- APPLICATIONS & TOOLS -->
+            <section>
+                <h2 class="section-title">Tools & AI Tech</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Proficient in utilizing modern digital platforms and AI tools to enhance learning design and professional workflows:</p>
+                <div class="tech-tags">
+                    <span class="tag">ChatGPT</span>
+                    <span class="tag">Claude</span>
+                    <span class="tag">Jasper</span>
+                    <span class="tag">Zoom</span>
+                    <span class="tag">Google Classroom</span>
+                    <span class="tag">Google Meet</span>
+                    <span class="tag">MS Teams</span>
+                    <span class="tag">PowerSchool</span>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Ready to meet your professional English goals?</p>
+        <a href="mailto:lyndamcguirk@gmail.com" class="footer-email">lyndamcguirk@gmail.com</a>
+    </footer>
+
+</body>
+</html>
